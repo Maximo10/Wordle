@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="560.0" prefWidth="740.0" spacing="15.0" style="-fx-background-color: whitestone; -fx-border-color: grey; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wordle.HelloController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+    <!-- Título -->
+    <Label style="-fx-font-size: 40px; -fx-text-fill: black; -fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10; -fx-max-width: 300; -fx-alignment: center;" text="WORDLY" />
+
+    <!-- Pricipal -->
+    <HBox prefHeight="289.0" prefWidth="700.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+
+      <children>
+          <!-- Tablero -->
+          <VBox fx:id="contenedorTablero" alignment="CENTER" spacing="5">
+          <!-- Fila 1 -->
+              <HBox alignment="CENTER" spacing="5">
+                  <TextField fx:id="tf00" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf01" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf02" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf03" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf04" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+              </HBox>
+              <!-- Fila 2 -->
+              <HBox alignment="CENTER" spacing="5">
+                  <TextField fx:id="tf05" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf06" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf07" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf08" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf09" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+              </HBox>
+              <!-- Fila 3 -->
+              <HBox alignment="CENTER" spacing="5">
+                  <TextField fx:id="tf10" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf11" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf12" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf13" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf14" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+              </HBox>
+              <!-- Fila 4 -->
+              <HBox alignment="CENTER" spacing="5">
+                  <TextField fx:id="tf15" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf16" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf17" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf18" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf19" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+              </HBox>
+              <!-- Fila 5 -->
+              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="358.0" spacing="5">
+                  <TextField fx:id="tf20" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf21" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf22" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf23" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+                  <TextField fx:id="tf24" editable="false" prefHeight="50" prefWidth="50" style="-fx-font-size: 24px; -fx-alignment: center;" />
+              </HBox>
+
+          </VBox>
+
+          <!-- Informacion -->
+         <Pane id="tabla_informacion" prefHeight="275.0" prefWidth="431.0" style="-fx-background-color: whitestone;">
+
+            <children>
+
+                <!-- Estado del juego -->
+                <Label fx:id="estado_juego" layoutX="144.0" layoutY="49.0" style="-fx-font-size: 16px; -fx-border-color: grayç;" text="Intento 1 de 5" />
+
+                <!-- Estadísticas -->
+                <VBox alignment="CENTER" layoutX="43.0" layoutY="100.0" prefHeight="105.0" prefWidth="302.0" spacing="5" style="-fx-border-color: gray; -fx-padding: 10; -fx-border-radius: 20;">
+                    <Label fx:id="lblAciertos" text="Aciertos:  0" />
+                    <Label fx:id="lblFallos" text="Fallos:  0" />
+                    <Label fx:id="lblIntentos" prefHeight="17.0" prefWidth="113.0" text="Nº de intentos: 0 / 5" />
+                    <Label fx:id="lblPalabraBuscada" prefHeight="17.0" prefWidth="205.0" text="Palabra buscada:  _  _  _  _  _" />
+                </VBox>
+
+                <Button layoutX="119.0" layoutY="236.0" onAction="#Reiniciar" prefHeight="25.0" prefWidth="150" style="-fx-background-color: #0088ff;" text="VOLVER A JUGAR" textFill="WHITE" />
+            </children>
+
+         </Pane>
+
+      </children>
+
+   </HBox>
+
+    <!-- Entrada de palabra -->
+    <HBox alignment="CENTER" spacing="10">
+        <TextField fx:id="entradaPalabra" maxWidth="213.0" prefHeight="25.0" prefWidth="213.0" promptText="Palabra (5 letras)" />
+        <Button onAction="#Enviar" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: green;" text="ENVIAR " textFill="WHITE" />
+    </HBox>
+
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <VBox prefHeight="100.0" prefWidth="702.0">
+            <children>
+                  <!-- Fila 1 -->
+                  <HBox prefHeight="42.0" prefWidth="700.0" spacing="5" style="-fx-alignment: center;">
+                      <Button fx:id="btnQ" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="Q" />
+                      <Button fx:id="btnW" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="W" />
+                      <Button fx:id="btnE" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="E" />
+                      <Button fx:id="btnR" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="R" />
+                      <Button fx:id="btnT" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="T" />
+                      <Button fx:id="btnY" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="Y" />
+                      <Button fx:id="btnU" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="U" />
+                      <Button fx:id="btnI" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="I" />
+                      <Button fx:id="btnO" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="O" />
+                      <Button fx:id="btnP" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="P" />
+                  </HBox>
+                  <!-- Fila 2 -->
+                  <HBox prefHeight="40.0" prefWidth="700.0" spacing="5" style="-fx-alignment: center;">
+                      <Button fx:id="btnA" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="A" />
+                      <Button fx:id="btnS" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="S" />
+                      <Button fx:id="btnD" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="D" />
+                      <Button fx:id="btnF" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="F" />
+                      <Button fx:id="btnG" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="G" />
+                      <Button fx:id="btnH" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="H" />
+                      <Button fx:id="btnJ" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="J" />
+                      <Button fx:id="btnK" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="K" />
+                      <Button fx:id="btnL" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="L" />
+                  <Button fx:id="btnL1" layoutX="370.0" layoutY="10.0" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="Ñ" />
+                  </HBox>
+                  <!-- Fila 3 -->
+                  <HBox prefHeight="38.0" prefWidth="700.0" spacing="5" style="-fx-alignment: center;">
+                      <Button fx:id="btnZ" onAction="#onLetraPresionada" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="&lt;=" />
+                      <Button fx:id="btnC" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="C" />
+                      <Button fx:id="btnV" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="X" />
+                      <Button fx:id="btnB" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="C" />
+                      <Button fx:id="btnN" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="V" />
+                      <Button fx:id="btnM" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="B" />
+                  <Button fx:id="btnM1" layoutX="280.0" layoutY="10.0" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="N" />
+                  <Button fx:id="btnM11" layoutX="325.0" layoutY="10.0" onAction="#onLetraPresionada" prefWidth="40" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="M" />
+                  <Button fx:id="btnM111" layoutX="370.0" layoutY="10.0" onAction="#onLetraPresionada" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 4;" text="Enter" />
+                  </HBox>
+            </children>
+         </VBox>
+      </children>
+   </HBox>
+</VBox>
